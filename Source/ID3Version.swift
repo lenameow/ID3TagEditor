@@ -32,8 +32,8 @@ public enum ID3Version: UInt8, Comparable, Equatable, Hashable, CaseIterable {
 }
 
 extension ID3Version {
-    var builder: TagBuilder {
-        switch self {            
+    public var builder: TagBuilder {
+        switch self {
         case .version2:
             return ID32v2TagBuilder()
         case .version3:
