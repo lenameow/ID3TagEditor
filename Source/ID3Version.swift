@@ -17,7 +17,7 @@ public enum ID3Version: UInt8, Comparable, Equatable, Hashable, CaseIterable {
     case version3 = 3
     /// ID3 2.4 version.
     case version4 = 4
-
+    
     /**
      Compare two version values.
      
@@ -28,5 +28,18 @@ public enum ID3Version: UInt8, Comparable, Equatable, Hashable, CaseIterable {
      */
     public static func < (lhs: ID3Version, rhs: ID3Version) -> Bool {
         return lhs.rawValue < rhs.rawValue
+    }
+}
+
+extension ID3Version {
+    var builder: TagBuilder {
+        switch self {            
+        case .version2:
+            return ID32v2TagBuilder()
+        case .version3:
+            return ID32v3TagBuilder()
+        case .version4:
+            return ID32v4TagBuilder()
+        }
     }
 }
