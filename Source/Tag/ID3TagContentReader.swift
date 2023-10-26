@@ -30,6 +30,11 @@ public struct PartOfTotal: Equatable {
     public let position: Int
     /// The number of elements.
     public let total: Int?
+    
+    public init(position: Int, total: Int?) {
+        self.position = position
+        self.total = total
+    }
 }
 
 /**
