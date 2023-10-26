@@ -19,6 +19,11 @@ public struct Genre: Equatable {
     public let identifier: ID3Genre?
     /// The genre description.
     public let description: String?
+    
+    public init(identifier: ID3Genre?, description: String?) {
+        self.identifier = identifier
+        self.description = description
+    }
 }
 
 /**
