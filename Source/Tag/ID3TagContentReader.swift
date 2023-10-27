@@ -75,6 +75,12 @@ public struct AttachedPicture: Equatable {
     public let format: ID3PictureFormat
     /// The image type as reported in the ID3 tag standard.
     public let type: ID3PictureType
+    
+    public init(picture: Data, format: ID3PictureFormat, type: ID3PictureType) {
+        self.picture = picture
+        self.format = format
+        self.type = type
+    }
 }
 
 /**
